@@ -22,6 +22,7 @@ export class UserService {
       this.http.post(this.baseUrl2+"/addUser.php",JSON.stringify(item)).subscribe((data:any) => {
         return this.result = resolve(data);
       }, (err:any) => {
+        alert(JSON.stringify(err))
         console.log(err);
       });
     });
