@@ -136,7 +136,7 @@ export class HomePage implements OnInit {
     await this.getDeviceLanguage();
     await this.checkLoginUser();
     await this.functionCreatTable();
-    await this.checkLoginDataUser();
+    //await this.checkLoginDataUser();
     const loading = await this.loading.create({
       cssClass: 'my-custom-class',
       message: '',
@@ -190,7 +190,9 @@ export class HomePage implements OnInit {
     let token = await this.firebaseMessaging.getToken();
     let sendValues = {'mainUser':this.mainUserName,'userName':this.userName,'dep':this.department,'token':token};
      this.userService.loginDataUser(sendValues).then(async data=>{
+       alert("done")
     }).catch(error=>{
+       alert("sdfsdf")
       this.checkLoginDataUser();
     });
   }
