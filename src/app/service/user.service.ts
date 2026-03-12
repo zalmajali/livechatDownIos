@@ -18,6 +18,7 @@ export class UserService {
     });
   }
   async loginDataUser(item:any){
+    alert("sdf")
     return new Promise(resolve => {
       this.http.post(this.baseUrl2+"/addUser.php",JSON.stringify(item)).subscribe((data:any) => {
         return this.result = resolve(data);
