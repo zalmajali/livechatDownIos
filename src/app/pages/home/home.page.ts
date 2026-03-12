@@ -136,7 +136,7 @@ export class HomePage implements OnInit {
     await this.getDeviceLanguage();
     await this.checkLoginUser();
     await this.functionCreatTable();
-    //await this.checkLoginDataUser();
+    await this.checkLoginDataUser();
     const loading = await this.loading.create({
       cssClass: 'my-custom-class',
       message: '',
