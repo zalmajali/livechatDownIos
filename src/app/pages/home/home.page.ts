@@ -189,6 +189,7 @@ export class HomePage implements OnInit {
     })
     let token = await this.firebaseMessaging.getToken();
     let sendValues = {'mainUser':this.mainUserName,'userName':this.userName,'dep':this.department,'token':token};
+      alert(JSON.stringify(sendValues))
       alert("sdfsdfsd");
      this.userService.loginDataUser(sendValues).then(async data=>{
        alert("done")
