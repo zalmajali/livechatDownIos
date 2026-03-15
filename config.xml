@@ -67,6 +67,7 @@
     </platform>
     <platform name="ios">
         <resource-file src="resources/sounds/notification.wav" />
+      <resource-file src="resources/sounds/notificationv.wav" />
         <preference name="StatusBarOverlaysWebView" value="false" />
         <preference name="StatusBarBackgroundColor" value="#FF0000" />
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
