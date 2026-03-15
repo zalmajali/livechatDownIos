@@ -171,18 +171,15 @@ export class HomePage implements OnInit {
     await loading.present();
   }
     async checkLoginDataUser(){
-      alert("sdfsdsdf sdfsdf");
     this.department = await this.storage.get('department');
     this.mainUserName = await this.storage.get('mainUserName');
     this.userName = await this.storage.get('userName');
       this.firebaseMessaging.requestPermission({forceShow: false}).then(function() {
      });
-      alert("sdfsdsdf sdfsdf 789789");
      let topic = this.mainUserName+this.department;
      await this.firebaseMessaging.subscribe(topic);
      await this.firebaseMessaging.onMessage().subscribe(async (data:any)=>{
      })
-      alert("sdfsdsdf sdfsdf 3453455");
     await this.firebaseMessaging.onBackgroundMessage().subscribe(async (data:any)=>{
       if (data.chatSessionId && data.number && data.userName) {
         const contacts = await this.functionChatGetMobileInfo(data.number);
@@ -192,11 +189,8 @@ export class HomePage implements OnInit {
     })
     let token = await this.firebaseMessaging.getToken();
     let sendValues = {'mainUser':this.mainUserName,'userName':this.userName,'dep':this.department,'token':token};
-      alert(JSON.stringify(sendValues))
      this.userService.loginDataUser(sendValues).then(async data=>{
-      alert(JSON.stringify(data))
     }).catch(error=>{
-      alert(JSON.stringify(error))
       this.checkLoginDataUser();
     });
   }
